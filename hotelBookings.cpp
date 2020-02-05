@@ -17,19 +17,27 @@ bool sortByArrival(const pair<int, int> &a, const pair<int, int> &b)
 void countAvailableRooms(vector<pair<int, int>> &pairedVector, int availableRooms)
 {
     int j = 0;
-    int count = 0;
+    int countARooms = 0;
+    int maxRooms = 0;
     while (j < pairedVector.size())
     {
-        if (pairedVector[j].second > pairedVector[j + 1].first)
+        if (pairedVector[j].second == 1)
         {
-            count++;
+            countARooms++;
+            if (maxRooms < countARooms)
+            {
+                maxRooms = countARooms;
+            }
+        }
+        else
+        {
+            countARooms--;
         }
         j++;
+        cout << "count rooms required = " << countARooms << "," << maxRooms << endl;
     }
 
-    cout << "count rooms required = " << count << endl;
-
-    if (count == availableRooms)
+    if (maxRooms <= availableRooms)
     {
         cout << "available rooms";
     }
@@ -44,7 +52,8 @@ void createPairAndSort(vector<int> &arrival, vector<int> &departure, int availab
     vector<pair<int, int>> pairedVector;
     for (i = 0; i < arrival.size(); i++)
     {
-        pairedVector.push_back(make_pair(arrival[i], departure[i]));
+        pairedVector.push_back(make_pair(arrival[i], 1));
+        pairedVector.push_back(make_pair(departure[i], -1));
     }
     printPairedVector(pairedVector);
 

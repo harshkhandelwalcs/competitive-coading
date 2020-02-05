@@ -3,7 +3,7 @@ using namespace std;
 vector<int> twoSum(vector<int> &numbers, int target)
 {
     int i = 0;
-    int j = 0;
+    // int j = 0;
     vector<int> sum;
     for (i = 0; i < numbers.size(); i++)
     {
