@@ -68,4 +68,4 @@ int main()
     vector<int> departure{3, 4, 5, 6, 7};
     int availableRooms = 3;
     createPairAndSort(arrival, departure, availableRooms);
-}
+}  
