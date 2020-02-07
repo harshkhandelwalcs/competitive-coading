@@ -3,7 +3,7 @@ using namespace std;
 vector<int> twoSum(vector<int> &numbers, int target)
 {
     int i = 0;
-    int j = 1;
+    int j = numbers.size() - 1;
     vector<int> sum;
     // for (i = 0; i < numbers.size(); i++)
     // {
@@ -19,23 +19,22 @@ vector<int> twoSum(vector<int> &numbers, int target)
     //     }
     // }
 
-    while (i < numbers.size() && j < numbers.size())
+    while (i < numbers.size() && j > 0)
     {
         if ((numbers[i] + numbers[j]) == target)
         {
-            sum.push_back(i + 1);
-            sum.push_back(j + 1);
+            sum.push_back(i);
+            sum.push_back(j);
             cout << sum[0] << "," << sum[1];
             return sum;
         }
-        else if (j == (numbers.size() - 1))
+        else if ((numbers[i] + numbers[j]) > target)
         {
-            i++;
-            j = i + 1;
+            j--;
         }
         else
         {
-            j++;
+            i++;
         }
     }
 }

@@ -7,9 +7,11 @@ int sortBy(string a, string b)
     string XY = a.append(b);
 
     // then append X at the end of Y
+    cout << "string awew = " << a << endl;
     string YX = b.append(a);
 
     // Now see which of the two formed numbers is greater
+    cout << "string ab =" << XY << ", string ba = " << YX << endl;
     return XY.compare(YX) > 0 ? 1 : 0;
 }
 
