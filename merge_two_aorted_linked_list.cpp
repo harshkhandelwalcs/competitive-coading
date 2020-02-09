@@ -1,12 +1,18 @@
+#include <bits/stdc++.h>
+
 //merge function
 struct ListNode
 {
     int val;
     ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
+    ListNode(int x)
+    {
+        val = x;
+        next = NULL;
+    }
 };
 
-ListNode *Solution::mergeTwoLists(ListNode *A, ListNode *B)
+ListNode mergeTwoLists(ListNode *A, ListNode *B)
 {
 
     ListNode *finalListHead = NULL;
@@ -62,5 +68,5 @@ ListNode *Solution::mergeTwoLists(ListNode *A, ListNode *B)
         B = B->next;
     }
 
-    return finalListHead;
+    return *finalListHead;
 }
