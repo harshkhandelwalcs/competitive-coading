@@ -30,7 +30,7 @@ int partition(int *arr, int startIndex, int endIndex){
 }
 
 int randomPivotGeneration(int *arr, int startIndex, int endIndex){
-    int pivot,n, temp;
+    int pivot,n;
     n = rand();
     pivot = startIndex+n%(endIndex-startIndex+1);
 
