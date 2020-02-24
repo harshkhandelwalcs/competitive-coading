@@ -45,6 +45,7 @@ int quickSort(int *arr, int startIndex, int endIndex){
        quickSort(arr, startIndex, pindex-1);
        quickSort(arr, pindex+1, endIndex);
    }
+   return 0;
 }
 
 int main(){
